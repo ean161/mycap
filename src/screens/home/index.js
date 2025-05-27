@@ -1,15 +1,27 @@
-import { StyleSheet, SafeAreaView, Image, ScrollView, Pressable } from 'react-native';
-import { View, Text } from 'react-native-ui-lib';
+import { useState, useEffect } from 'react';
+import { StyleSheet, SafeAreaView, ScrollView, Pressable } from 'react-native';
+import { View, Text, Image, Colors } from 'react-native-ui-lib';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './../../theme';
+import homeStyles from './../../theme/homeStyles';
 
 export default function Home() {
+    const [emo, setEmo] = useState("all");
+
+    useEffect(() => {
+        console.log(emo);
+    }, [emo]);
+
+    const handleChangeEmo = (type) => {
+        setEmo((type == emo ? "all" : type));
+    }
+
     return (
         <SafeAreaView style={styles.wrapper}>
             <LinearGradient
                 colors={[
-                    "#ff8900",
-                    "white"
+                    Colors.primary,
+                    Colors.primaryFade
                 ]}
                 start={{
                     x: 0,
@@ -17,11 +29,11 @@ export default function Home() {
                 }}
                 end={{
                     x: 0.9,
-                    y: 0.5
+                    y: 0.7
                 }}
                 style={StyleSheet.absoluteFill}
             />
-            <View style={styles.container}>
+            <View style={[styles.container, {padding: 0}]}>
                 <View
                     marginL-16
                     style={{
@@ -36,21 +48,36 @@ export default function Home() {
                         white
                     >Chia sẻ cảm xúc</Text>
                 </View>
-                <Image style={styles.catImg} source={require("./../../assets/images/cat2.png")}/>
-                <View style={styles.card}>
-                    <View style={styles.captionContent}>
-                        <Image style={[styles.actionBtn, {top: -16}]} source={require("./../../assets/images/icons/Share.png")}/>
-                        <Image style={[styles.actionBtn, {top: 60}]} source={require("./../../assets/images/icons/Lock.png")}/>
+                <View style={{
+                    flexDirection: "row"
+                }}>
+                    <View style={homeStyles.emos}>
+                        <Pressable onPress={() => {
+                            handleChangeEmo("fun");
+                        }}>
+                            <Image style={homeStyles.emoImg} source={require("./../../assets/images/emo/fun.png")}/>
+                        </Pressable>
+                        <Pressable onPress={() => {
+                            handleChangeEmo("sad");
+                        }}>
+                            <Image marginT-16 style={homeStyles.emoImg} source={require("./../../assets/images/emo/sad.png")}/>
+                        </Pressable>
+                        <Pressable onPress={() => {
+                            handleChangeEmo("angry");
+                        }}>
+                            <Image marginT-16 style={homeStyles.emoImg} source={require("./../../assets/images/emo/angry.png")}/>
+                        </Pressable>
                     </View>
-                    <View style={styles.menu}>
-                        <Pressable style={styles.menuBtn}>
-                            <Text orange80 style={styles.menuLabel}>Tất cả</Text>
-                        </Pressable>
-                        <Pressable style={styles.menuBtn}>
-                            <Text orange80 style={styles.menuLabel}>Hạnh phúc</Text>
-                        </Pressable>
-                        <Pressable style={styles.menuBtn}>
-                            <Text orange80 style={styles.menuLabel}>Tâm trạng</Text>
+                    <Image style={homeStyles.catImg} source={require("./../../assets/images/cat2.png")}/>
+                </View>
+                <Text style={homeStyles.emoTitle}>#{emo}</Text>
+                <View style={styles.card}>
+                    <View style={homeStyles.captionContent}>
+                        
+                    </View>
+                    <View style={homeStyles.menu}>
+                        <Pressable style={homeStyles.menuBtn}>
+                            <Text orange80 style={homeStyles.menuLabel}>Bỏ qua</Text>
                         </Pressable>
                     </View>
                 </View>
