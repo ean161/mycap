@@ -24,9 +24,33 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 50,
     },
     catImg: {
-        height: 200,
+        height: 300,
         resizeMode: "contain",
         marginHorizontal: "auto"
+    },
+    menu: {
+        top: 0,
+        flexDirection: "row",
+        justifyContent: "space-around"
+    },
+    menuBtn: {
+        alignItems: "center",
+        backgroundColor: "#ff8900",
+        padding: 16,
+        borderRadius: 25
+    },
+    menuLabel: {
+        fontWeight: 700
+    },
+    captionContent: {
+        height: "50%"
+    },
+    actionBtn: {
+        position: "absolute",
+        right: -26,
+        width: 100,
+        height: 100,
+        resizeMode: "contain"
     }
 });
 
