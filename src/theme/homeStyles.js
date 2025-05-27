@@ -19,15 +19,19 @@ const homeStyles = StyleSheet.create({
     menuBtn: {
         // width: 150,
         // alignItems: "right",
-        backgroundColor: Colors.primaryFade,
+        backgroundColor: "white",
         padding: 16,
         borderRadius: 25
     },
     menuLabel: {
-        fontWeight: 700
+        fontWeight: 700,
+        color: Colors.primaryFade
     },
     captionContent: {
-        height: "50%"
+        height: "50%",
+        color: "white",
+        fontSize: 50,
+        fontFamily: "Pattaya-Regular"
     },
     actionBtn: {
         position: "absolute",

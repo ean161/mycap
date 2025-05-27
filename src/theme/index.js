@@ -5,8 +5,8 @@ import {
 import { Colors } from 'react-native-ui-lib';
 
 Colors.loadColors({
-    "primary": "#ff8900",
-    "primaryFade": "#fcac41"
+    "primary": "#2A1D6E",
+    "primaryFade": "#392877"
 });
 
 const styles = StyleSheet.create({
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 		height: "100%"
 	},
     card: {
-        backgroundColor: "white",
+        backgroundColor: "#392877",
         width: "100%",
         height: "100%",
         padding: 30,
