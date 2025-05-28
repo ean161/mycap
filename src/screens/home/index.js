@@ -45,6 +45,7 @@ export default function Home() {
             />
             <View style={[styles.container, {padding: 0}]}>
                 <View
+                    marginT-16
                     marginL-16
                     style={{
                         position: "absolute"

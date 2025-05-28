@@ -28,9 +28,10 @@ const homeStyles = StyleSheet.create({
         color: Colors.primaryFade
     },
     captionContent: {
+        // textAlign: "center",
         height: "50%",
-        color: "white",
-        fontSize: 50,
+        color: Colors.$textDisabled,
+        fontSize: 40,
         fontFamily: "Pattaya-Regular"
     },
     actionBtn: {
@@ -43,7 +44,7 @@ const homeStyles = StyleSheet.create({
     emos: {
         position: "absolute",
         marginLeft: 16,
-        marginTop: 50,
+        marginTop: 66,
         padding: 10,
         borderRadius: 50,
         backgroundColor: Colors.primaryFade,

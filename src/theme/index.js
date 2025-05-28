@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 		height: "100%"
 	},
     card: {
-        backgroundColor: "#392877",
+        backgroundColor: "white",
         width: "100%",
         height: "100%",
         padding: 30,
